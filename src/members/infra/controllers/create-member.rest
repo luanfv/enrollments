@@ -1,0 +1,10 @@
+### Criar membro
+POST http://localhost:3000/members
+Content-Type: application/json
+
+{
+  "name": "João",
+  "email": "joao@email.com",
+  "birthdate": "01/01/2000",
+  "gender": "male"
+}
