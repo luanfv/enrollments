@@ -1,11 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { MemberAggregate } from '../domain/member.aggregate';
+import { MemberAggregate } from '../domain/aggregates/member.aggregate';
 import {
   CreateMemberInput,
   CreateMemberOutput,
   ICreateMemberService,
 } from './create-member.interface';
 import { MembersRepository } from '../infra/databases/members.repository';
+import { AlreadyExistsException } from '../domain/exceptions/already-exists.exception';
 
 @Injectable()
 export class CreateMemberService implements ICreateMemberService {
@@ -17,7 +18,8 @@ export class CreateMemberService implements ICreateMemberService {
     const emailExists = await this.membersRepository.existsByEmail(
       createMemberDto.email,
     );
-    if (emailExists) throw new Error('Email already exists');
+    if (emailExists)
+      throw new AlreadyExistsException('Email already used by another member');
 
     const member = MemberAggregate.create(createMemberDto);
     await this.membersRepository.create(member);

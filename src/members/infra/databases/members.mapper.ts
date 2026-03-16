@@ -1,4 +1,4 @@
-import { MemberAggregate } from '../../domain/member.aggregate';
+import { MemberAggregate } from '../../domain/aggregates/member.aggregate';
 import { MembersEntity } from './members.entity';
 
 export class MembersMapper {

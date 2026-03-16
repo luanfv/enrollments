@@ -1,3 +1,5 @@
+import { DomainException } from '../exceptions/domain.exception';
+
 export class GenderVO {
   private readonly gender: string;
 
@@ -15,7 +17,7 @@ export class GenderVO {
         break;
 
       default:
-        throw new Error('Invalid gender');
+        throw new DomainException('Invalid gender');
     }
   }
 

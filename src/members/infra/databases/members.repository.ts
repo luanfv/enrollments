@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { MembersEntity } from './members.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { MemberAggregate } from '../../domain/member.aggregate';
+import { MemberAggregate } from '../../domain/aggregates/member.aggregate';
 import { MembersMapper } from './members.mapper';
 
 @Injectable()
