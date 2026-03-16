@@ -1,7 +1,7 @@
 import { DomainException } from '../exceptions/domain.exception';
 import { GenderVO } from './gender.vo';
 
-describe('GenderVO', () => {
+describe('GenderVO unit tests', () => {
   it.each`
     input        | expected
     ${'male'}    | ${'male'}

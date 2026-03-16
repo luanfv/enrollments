@@ -1,7 +1,7 @@
 import { DomainException } from '../exceptions/domain.exception';
 import { BirthdateVO } from './birthdate.vo';
 
-describe('BirthdateVO', () => {
+describe('BirthdateVO unit tests', () => {
   it('SHOULD create a BirthdateVO with a valid date', () => {
     const birthdate = new Date('2000-01-01');
     const birthdateVO = new BirthdateVO(birthdate);

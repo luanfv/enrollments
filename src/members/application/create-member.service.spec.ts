@@ -4,7 +4,7 @@ import { CreateMemberService } from './create-member.service';
 import { MembersRepository } from '../infra/databases/members.repository';
 import { AlreadyExistsException } from '../domain/exceptions/already-exists.exception';
 
-describe('CreateMemberService', () => {
+describe('CreateMemberService unit tests', () => {
   let moduleRef: TestingModule;
 
   beforeEach(async () => {

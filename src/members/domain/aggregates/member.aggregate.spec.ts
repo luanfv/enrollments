@@ -1,6 +1,6 @@
 import { MemberAggregate } from './member.aggregate';
 
-describe('MemberAggregate', () => {
+describe('MemberAggregate unit tests', () => {
   describe('create', () => {
     it('SHOULD create a MemberAggregate with valid properties', () => {
       const member = MemberAggregate.create({

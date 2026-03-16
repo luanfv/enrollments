@@ -1,7 +1,7 @@
 import { DomainException } from '../exceptions/domain.exception';
 import { EmailVO } from './email.vo';
 
-describe('EmailVO', () => {
+describe('EmailVO unit tests', () => {
   it('SHOULD create an EmailVO with a valid email', () => {
     const emailVO = new EmailVO('test@example.com');
     expect(emailVO.value).toEqual('test@example.com');
