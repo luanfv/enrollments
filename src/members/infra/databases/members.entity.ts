@@ -1,7 +1,7 @@
 import { Entity, PrimaryColumn, Column, CreateDateColumn } from 'typeorm';
 
 @Entity('members')
-export class Member {
+export class MembersEntity {
   @PrimaryColumn({ type: 'varchar', length: 64 })
   id: string;
 

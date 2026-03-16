@@ -11,7 +11,7 @@ export const dataSourceOptions: DataSourceOptions = {
   password: 'secret',
   database: 'enrollments',
   synchronize: false,
-  entities: [],
+  entities: [__dirname + '/members/infra/databases/*.entity{.ts,.js}'],
   migrations: [__dirname + '/migrations/*{.ts,.js}'],
 };
 

@@ -19,6 +19,15 @@ type MemberAggregateCreateProps = {
   birthdate: Date;
 };
 
+type MemberAggregateRestoreProps = {
+  id: string;
+  name: string;
+  email: string;
+  gender?: string;
+  birthdate: Date;
+  createdAt: Date;
+};
+
 export class MemberAggregate {
   private _props: MemberAggregateProps;
 
@@ -54,6 +63,21 @@ export class MemberAggregate {
       gender,
       birthdate,
       createdAt,
+    );
+  }
+
+  public static restore(props: MemberAggregateRestoreProps): MemberAggregate {
+    const email = new EmailVO(props.email);
+    const gender = new GenderVO(props.gender);
+    const birthdate = new BirthdateVO(props.birthdate);
+
+    return new MemberAggregate(
+      props.id,
+      props.name,
+      email,
+      gender,
+      birthdate,
+      props.createdAt,
     );
   }
 
