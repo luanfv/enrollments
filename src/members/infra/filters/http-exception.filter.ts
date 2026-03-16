@@ -7,7 +7,7 @@ import {
 } from '@nestjs/common';
 import { Request, Response } from 'express';
 import { DomainException } from '../../domain/exceptions/domain.exception';
-import { AlreadyExistsException } from 'src/members/domain/exceptions/already-exists.exception';
+import { AlreadyExistsException } from '../../domain/exceptions/already-exists.exception';
 
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {

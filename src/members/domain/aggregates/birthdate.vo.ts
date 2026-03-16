@@ -7,8 +7,13 @@ export class BirthdateVO {
     if (birthdate > new Date()) {
       throw new DomainException('Birthdate cannot be in the future');
     }
-    birthdate.setHours(0, 0, 0, 0);
-    this.birthdate = birthdate;
+    this.birthdate = new Date(
+      Date.UTC(
+        birthdate.getUTCFullYear(),
+        birthdate.getUTCMonth(),
+        birthdate.getUTCDate(),
+      ),
+    );
   }
 
   public get value(): Date {
